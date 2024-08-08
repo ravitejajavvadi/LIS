@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 		monochrome = true, //display the console output in a proper readable format
 		 //it will check if any step is not defined in step definition file
 		dryRun = false, //to check the mapping is proper between feature file and step def file
-		tags = "@Regression and not @SmokeTest."	
+		tags = "@Regression"
 		)
 
 public class TestRunner {
