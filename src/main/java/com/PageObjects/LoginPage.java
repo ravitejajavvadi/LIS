@@ -15,7 +15,7 @@ import com.Base.TestBase;
 
 public class LoginPage extends TestBase {
 
-	WebDriver driver;
+	WebDriver driver1;
 	 
 //	WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(20));
 //	
@@ -31,7 +31,7 @@ public class LoginPage extends TestBase {
 //	@FindBy(xpath="//img[@src=\"img/AdactIn_logo.png\"]")
 //	public static WebElement login_APPLogo;
 	
-	By login_Usename= By.id("username");
+	By login_Usename= By.id("username1");
 	By login_Password = By.id("password");
 	By login_SubmitButton = By.className("login_button");
 	By login_APPLogo = By.xpath("//img[@class=\"logo\"]");

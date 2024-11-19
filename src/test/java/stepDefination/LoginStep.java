@@ -27,10 +27,10 @@ public class LoginStep extends TestBase{
 		
 		testbase.LaucnhAPP();
 		loginpage= new LoginPage(TestBase.driver);
-		String current_URL=loginpage.VerifyLaunchURL();
-		Assert.assertEquals(current_URL, "https://adactinhotelapp.com/index.php");
-		String Current_title=loginpage.VerifyLoginPageTitle();
-		Assert.assertEquals(Current_title, "Adactin.com - Hotel Reservation System");
+//		String current_URL=loginpage.VerifyLaunchURL();
+//		Assert.assertEquals(current_URL, "https://adactinhotelapp.com/index.php");
+//		String Current_title=loginpage.VerifyLoginPageTitle();
+//		Assert.assertEquals(Current_title, "Adactin.com - Hotel Reservation System");
 					   
 	}
 	

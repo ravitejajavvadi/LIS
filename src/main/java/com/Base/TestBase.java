@@ -28,7 +28,7 @@ public class TestBase {
 	try {
 		  System.out.println("Loading Config Properties File InProgress------------");
 			 prop= new Properties();
-			 FileInputStream ip = new FileInputStream("C:\\Users\\DELL\\eclipse-workspace\\LIS\\src\\main\\java\\com\\utils\\config.properties");
+			 FileInputStream ip = new FileInputStream("./config.properties");
 			 prop.load(ip);
 			 System.out.println("Properties Files Read Successfully-----------");
 		} 
@@ -45,7 +45,7 @@ public class TestBase {
 	public void LaucnhAPP() throws IOException {
 				
 		String Browser_name=prop.getProperty("browser");
-		if(Browser_name.equalsIgnoreCase("chrome")) {
+		if(Browser_name.equalsIgnoreCase("Chrome")) {
 			driver= new ChromeDriver();
 		}else if(Browser_name.equalsIgnoreCase("firefox")) {
 		     driver= new FirefoxDriver();
@@ -56,7 +56,17 @@ public class TestBase {
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("url"));
+		
+		String env=prop.getProperty("env");
+		if(env.equalsIgnoreCase("QA")) {
+		   driver.get(prop.getProperty("QAurl"));
+		}else if (env.equalsIgnoreCase("UAT")) {
+			 driver.get(prop.getProperty("stageURl"));
+		}else if(env.equalsIgnoreCase("DEV")) {
+			 driver.get(prop.getProperty("Devurl"));
+		}else {
+			System.out.println("Env value not provided ");
+		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
 		
 	}
